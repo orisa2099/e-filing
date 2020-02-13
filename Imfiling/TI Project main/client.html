@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IM FILING</title>
+	<link rel="stylesheet" type="text/css" href="css/Bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#">Akinwale Johnson <small>lodge your complain or talk to a lawyer</small></a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Signed in</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<div class="col-lg-1 top1 side-nav">
+  <ul class="nav nav-pills flex-column top">
+    <li class="active"><a data-toggle="tab" href="#home">Dashboard.+</a></li>
+    <li><a data-toggle="tab" href="#menu1">File cases</a></li>
+    <li><a data-toggle="tab" href="#menu2">My profile</a></li>
+    <li><a  href="index.html">Logout</a></li>
+  </ul>
+</div>
+
+  <div class="tab-content col-lg-11 top1">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p></p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      	<div class="panel panel-default container">
+	  <div class="panel-heading">
+	  	<h2 class="panel-title text-center">Complaint</h2>
+	  </div>
+	  <div class="panel-body">
+	  	<form class="form-horizontal" action="/action_page.php">
+		  <div class="form-group">
+		    <label class="control-label col-xs-5 col-sm-2" for="Complaint">Type of Complaint</label>
+		    <div class="col-xs-offset-4 col-sm-offset-2 col-xs-7 col-sm-10">
+		      <input type="radio" class="radio-inline" id="Complaint" name="complaint"> Civil <br><br>
+		      <input type="radio" class="radio-inline" id="Complaint" name="complaint"> Criminal
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label class="control-label col-xs-4 col-sm-2" for="lodge">Lodge Complaint</label>
+		    <div class="col-xs-8 col-sm-10">
+		      <textarea placeholder="Lodge your complaint here" id="lodge" style="height: 150px; width: 200px;"></textarea>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		  	<label class="control-label col-xs-2" for="select">Select</label>
+		    <div class="col-xs-offset-2 col-xs-10">
+		      <a href="assets/fir.html">Locate a firm in your area</a><br><br>
+		      <a href="assets/now.html">Talk to a lawyer</a>
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <div class="col-xs-offset-2 col-xs-10 text-right">
+		      <button type="submit" class="btn btn-default">Submit</button>
+		    </div>
+		  </div>
+		</form>
+	  </div>
+	</div>
+    </div> 
+  </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      
+
+
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/Bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+</body>
+</html>

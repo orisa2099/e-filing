@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>IM FILING</title>
+    <link rel="stylesheet" type="text/css" href="css/Bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="popupsform.html">
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Akinwale Johnson
+                    <!--<small>logde your complain or talk to a lawyer</small>--></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-dashboard"></span> Signed in</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="col-lg-1 top1 side-nav">
+  <ul class="nav nav-pills flex-column top">
+    <li class="active"><a data-toggle="tab" href="#home">Dashboard.+</a></li>
+    <li><a data-toggle="tab" href="#menu1">File cases</a></li>
+    <li><a data-toggle="tab" href="#menu2">My profile</a></li>
+    <li><a href="index.html">Logout</a></li>
+  </ul>
+</div>
+
+<div class="tab-content col-lg-11 ">
+    <div id="home" class="tab-pane fade in active top1">
+      <h3>HOME</h3>
+      
+    </div>
+    <div id="menu1" class="tab-pane fade">
+        <div class="panel panel-default container" style="margin-top: 70px">
+        <div class="panel-heading">
+            <h2 class="panel-title text-center">Civil Action</h2>
+        </div>
+        <div class="panel-body">
+
+            <!--tabs to filling originating processes -->
+
+            <div class="col-sm-3" style="display: flex; flex-direction: column; align-items: center; justify-content: space-around; height: 150px">
+                <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal1" style="height: 150px; width: 80%">WRIT OF <br>SUMMONS</button>
+            </div>
+
+            <div class="col-sm-3" style="display: flex; flex-direction: column; align-items: center; justify-content: space-around; height: 150px">
+                <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal2" style="height: 150px; width: 80%">ORIGINATING <br>MOTIONS</button>
+            </div>
+
+            <div class="col-sm-3" style="display: flex; flex-direction: column; align-items: center; justify-content: space-around; height: 150px">
+                <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#myModal3" style="height: 150px; width: 80%">ORIGINATING <br>SUMMONS</button>
+            </div>
+
+            <div class="col-sm-3" style="display: flex; flex-direction: column; align-items: center; justify-content: space-around; height: 150px">
+                <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#" style="height: 150px; width: 80%">PETITION</button>
+            </div>
+        </div>
+    </div>
+        <!-- tabs to filing originating motions -->
+
+        <div class="panel panel-default container" style="margin-top: 70px">
+            <div class="panel-heading">
+                <h2 class="panel-title text-center">Criminal Action</h2>
+            </div>
+            <div class="panel-body container">
+                <div class="col-sm-6" style="display: flex; flex-direction: column; align-items: center; justify-content: space-around; height: 150px">
+                    <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#" style="height: 150px">No Case Submission</button>
+
+                </div>
+
+                <div class="col-sm-6" style="display: flex; flex-direction: column; align-items: center; justify-content: space-around; height: 150px">
+                    <button type="button" class="btn btn-lg btn-success" data-toggle="modal" data-target="#" style="height: 150px;">Final Written Address</button>
+                    <!--
+            <button class="btn btn-lg btn-success">Upload docs</button>
+            <button class="btn-lg btn btn-success">Upload</button>
+-->
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+    </div>
+
+    <div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Originating motions</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+            <a href="motioexpatte.html" class="btn btn-success">MOTION EXPATTE</a>
+            <a href="motiononnotice.html" class="btn btn-success">MOTION ON NOTICE</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+  <div id="myModal3" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">originating summons</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+            <a href="originatingsummonsplantiff.html" class="btn btn-success">PLAINTIFF</a>
+            <a href="originatingsummonsdefendant.html" class="btn btn-success">DEFENDANT</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+  <div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Writ of summons</h4>
+      </div>
+      <div class="modal-body">
+        <div>
+            <a href="writofsummonplantiff.html" class="btn btn-success">PLAINTIFF</a>
+            <a href="writofsummonsdefendant.html" class="btn btn-success">DEFENDANT</a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+
+    <!-- scripting -->
+
+    <script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/Bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+
+
+
+</body></html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" type="text/css" href="../css/Bootstrap.min.css">  
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="stylesheet" type="text/css" href="css/card.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  <link rel="icon" type="img/png" href="../img/logo.png">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*.height{ 
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+ /* height: 50px,*/
+ }*/
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: brown;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+/*.height {
+  height: 150px;*/
+}
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+  <!-- navbar -->
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><span class="im"><i class="glyphicon glyphicon-folder-open li"></i>iM</span>-Filing <small>Making filing an easy process</small></a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">Home</a></li>
+          <li class="dropdown">
+        <a class="dropdown-toggle" type="button" data-toggle="dropdown">Lawyers and firms
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="assets/now.html">Honourable Lawyers</a></li>
+          <li><a href="assets/fir.html">Most trusted Firms</a></li>
+        </ul>
+      </li>
+          <li><a href="#aboutUs">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li class="dropdown">
+        <a class="dropdown-toggle" type="button" data-toggle="dropdown">Sign up
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" type="button" data-toggle="modal" data-target="#myModal1">Sign up as a Lawyer</a></li>
+          <li><a href="#" type="button" data-toggle="modal" data-target="#myModal">Sign up as a Client</a></li>
+        </ul>
+      </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<h1 class="top down" style="text-align: center;">Best Law Firms & Solicitors Professionals in Lagos</h1>
+
+
+<div class="row top down">
+  <div class="column">
+    <div class="card">
+      <img src="imga1.jpg" width="100%">
+      <h3>Resolution Law Firm</h3>
+      <p style="text-align: left;">Location: Ikeja Lagos.</p>
+      <p style="text-align: left">Description: Call Us On +2348099223322. Resolution Law Firm Is Established By A Team Of Lawyers With A Passion for humanity.</p>
+  
+    </div>
+    <button><a href="https://resolutionlawng.com"></a>Contact</button>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="imga2.jpg" width="100%">
+      <h3>Moyinoluwa Ologure And Company</h3>
+      <p style="text-align: left;">Location: Ikeja Lagos.</p>
+      <p style="text-align: left;">Description: Moyinoluwa Ologure And Company. A Firm Of Lawyers Made Up Of Solicitors And Advocates.</p>
+    </div>
+    <button><a href="https://resolutionlawng.com"></a>Contact</button>
+  </div>
+  <div class="height">
+  <div class="column">
+    <div class="card">
+      <img src="imga6.jpg" width="100%">
+      <h3>Shepherd And Crest</h3>
+      <p style="text-align: left;">Location: Ikeja Lagos.</p>
+      <p style="text-align: left;">Description: A Private Legal Practice Offering Services Such As Business Strategy And Registration.</p>
+    </div>
+    <button><a href="https://resolutionlawng.com"></a>Contact</button>
+  </div>
+  </div>
+  <div class="column">
+    <div class="card">
+      <img src="imga5.jpg" width="100%">
+      <h3>Ty Bello and Co.</h3>
+      <p style="text-align: left;">Location: Apapa Lagos.</p>
+      <p style="text-align: left;">Description: Firm Of Legal Practitioners And Arbitrators Practice Areas Are General Litigation  And Intellectual Property.</p>
+    </div>
+  <button><a href="https://resolutionlawng.com"></a>Contact</button>
+</div>
+
+  <script type="text/javascript" src="../jquery/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="../js/Bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+</body>
+</html>

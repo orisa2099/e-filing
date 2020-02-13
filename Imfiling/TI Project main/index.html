@@ -1,0 +1,618 @@
+<?php include('server.php')?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>iM FILING</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/Bootstrap.min.css">	
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/card.css">
+	<link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+	<link rel="icon" type="img/png" href="img/logo.png">
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-default">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <a class="navbar-brand" href="#"><span class="im"><i class="glyphicon glyphicon-folder-open li"></i>iM</span>-Filing <small>Making filing an easy process</small></a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="myNavbar">
+	      <ul class="nav navbar-nav navbar-right">
+	        <li class="active"><a href="#">Home</a></li>
+	        <li class="dropdown">
+			  <a class="dropdown-toggle" type="button" data-toggle="dropdown">Lawyers and firms
+			  <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+			    <li><a href="assets/now.html">Meet our Lawyers</a></li>
+			    <li><a href="assets/fir.html">Most trusted Firms</a></li>
+			  </ul>
+			</li>
+	        <li><a href="#aboutUs">About Us</a></li>
+	        <li><a href="contact.html">Contact Us</a></li>
+	        <li class="dropdown">
+			  <a class="dropdown-toggle" type="button" data-toggle="dropdown">Sign up
+			  <span class="caret"></span></a>
+			  <ul class="dropdown-menu">
+			    <li><a href="#" type="button" data-toggle="modal" data-target="#myModal1">Sign up as a Lawyer</a></li>
+			    <li><a href="#" type="button" data-toggle="modal" data-target="#myModal">Sign up as a Client</a></li>
+			  </ul>
+			</li>
+	      </ul>
+	    </div>
+	  </div>
+	</nav>
+
+	<section class="container-fluid">
+		<img src="img/inside.jpg" class="img-responsive screen">
+
+		<div class="ontext">
+			<span class="diff">iM-Filing</span> <h3>where clients and lawyers meet</h3>
+			<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#login1">sign in as a lawyer</button>
+			<button class="btn btn-primary" type="button" data-toggle="modal" data-target="#login">sign in as a client</button>
+		</div>
+	</section>
+	 
+<!-- Modal -->
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Register as a lawyer</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" method="post" action="lawyer.php">
+        	<?php include('errors.php');?>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="firstname"><span style="color: red">*</span> First Name:</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" id="firstname" placeholder="Enter first name" required name="firstname">
+					    </div>
+				  	  </div>
+				  	  <div class="form-group">
+					    <label class="control-label col-sm-3" for="lastname"><span style="color: red">*</span> Last Name:</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" id="lastname" placeholder="Enter last name" required name="lastname">
+					    </div>
+				  	  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="email"><span style="color: red">*</span> Email:</label>
+					    <div class="col-sm-9">
+					      <input type="email" class="form-control" id="email" placeholder="Enter email" required  name="email" value="<?php echo $email; ?>">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="pwd"><span style="color: red">*</span> Password:</label>
+					    <div class="col-sm-9">
+					      <input type="password" class="form-control" id="pwd" placeholder="Enter password" required name="password">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-4" for="pwd1"><span style="color: red">*</span> Confirm password:</label>
+					    <div class="col-sm-8">
+					      <input type="password" class="form-control" id="pwd1" placeholder="Confirm password" required name="password1">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="pwd">Phone No:</label>
+					    <div class="col-sm-9">
+					      <input type="number" class="form-control" id="pwd" placeholder="+234" name="number">
+					    </div>
+					  </div>
+					  <div class="form-group">
+						  <label class="control-label col-sm-3" for="pwd" name="gender">Gender:</label>
+					    <div class="col-sm-9">
+					  	  <label class="radio-inline"><input type="radio" name="optradio">Male</label>
+					      <label class="radio-inline"><input type="radio" name="optradio">Female</label> 
+					    </div>	
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="file" name="bar">Bar Certificate:</label>
+					    <div class="col-sm-9">
+					      <input type="file" class="form-control" id="file">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <div class="checkbox" >
+					        <label><input type="checkbox" class="give"> I agree to the<a href="#"> terms and conditions</a></label>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <button type="submit" class="btn btn-warning" name="reg_user" class="sarah">Register</button>
+					    </div>
+					  </div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <p class="text-center">Already have an iM-Filing account?</p>
+			<button type="submit" class="btn btn-primary" style="margin-right: 200px; padding: 10px 70px 10px 70px;">Log In</button>
+      </div>
+    </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Register as a client</h4>
+      </div>
+      <div class="modal-body">
+         <form class="form-horizontal" method="post" action="client.php">
+         	 <?php include('errors.php');?>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="firstname"><span style="color: red">*</span> First Name:</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" id="firstname" placeholder="Enter first name" required name="firstname">
+					    </div>
+				  	  </div>
+				  	  <div class="form-group">
+					    <label class="control-label col-sm-3" for="lastname"><span style="color: red">*</span> Last Name:</label>
+					    <div class="col-sm-9">
+					      <input type="text" class="form-control" id="lastname" placeholder="Enter last name" required name="lastname">
+					    </div>
+				  	  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="email"><span style="color: red">*</span> Email:</label>
+					    <div class="col-sm-9">
+					      <input type="email" class="form-control" id="email" placeholder="Enter email" required  name="email" value="<?php echo $email; ?>">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="pwd"><span style="color: red">*</span> Password:</label>
+					    <div class="col-sm-9">
+					      <input type="password" class="form-control" id="pwd" placeholder="Enter password" required name="password">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-4" for="pwd"><span style="color: red">*</span> Confirm password:</label>
+					    <div class="col-sm-8">
+					      <input type="password" class="form-control" id="pwd" placeholder="Confirm password" required name="password1">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="pwd">Phone No:</label>
+					    <div class="col-sm-9">
+					      <input type="number" class="form-control" id="pwd" placeholder="+234" name="number">
+					    </div>
+					  </div>
+					  <div class="form-group">
+						  <label class="control-label col-sm-3" for="pwd" name="gender">Gender:</label>
+					    <div class="col-sm-9">
+					  	  <label class="radio-inline"><input type="radio" name="optradio">Male</label>
+					      <label class="radio-inline"><input type="radio" name="optradio">Female</label> 
+					    </div>	
+					  </div>
+					  
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+					      <div class="checkbox">
+					        <label><input type="checkbox" class="give"> I agree to the<a href=""> terms and conditions</a></label>
+					      </div>
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <div class="col-sm-offset-2 col-sm-10">
+
+					      <button type="submit" class="btn btn-warning" name="reg_user" class="sarah">Register</button>
+					    </div>
+					  </div>
+				</form>
+      </div>
+      <div class="modal-footer">
+        <p class="text-center">Already have an iM-Filing account?</p>
+			<button type="submit" class="btn btn-primary" style="margin-right: 200px; padding: 10px 70px 10px 70px;">Log In</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="login" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog1">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">Log in as a client</h4>
+      </div>
+      <div class="modal-body">
+         <form class="form-horizontal" method="post" action="client.html">
+         	 <?php include('errors.php');
+				if (isset($_SESSION['msg'])){
+				echo $_SESSION['msg'];
+				}
+			  ?>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="email">Email:</label>
+					    <div class="col-sm-9">
+					      <input type="email" class="form-control" id="email" placeholder="Enter email" required name="email">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="pwd">Password:</label>
+					    <div class="col-sm-9">
+					      <input type="password" class="form-control" id="pwd" placeholder="Enter password" required name="password">
+					    </div>
+					  </div>
+
+					      <button type="submit" class="btn btn-warning" name="login_user">Log in</button>
+					    </div>
+					  </div>
+				</form>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="login1" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-dialog1">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">Log in as a lawyer</h4>
+      </div>
+      <div class="modal-body">
+         <form class="form-horizontal" method="post" action="lawyer.html">
+         	<?php include('errors.php');
+				if (isset($_SESSION['msg'])){
+				echo $_SESSION['msg'];
+				}
+			  ?>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="email">Email:</label>
+					    <div class="col-sm-9">
+					      <input type="email" class="form-control" id="email" placeholder="Enter email" required name="email">
+					    </div>
+					  </div>
+					  <div class="form-group">
+					    <label class="control-label col-sm-3" for="pwd">Password:</label>
+					    <div class="col-sm-9">
+					      <input type="password" class="form-control" id="pwd" placeholder="Enter password" required name="password">
+					    </div>
+					  </div>
+
+					      <button type="submit" class="btn btn-warning" name="login_user">Log in</button>
+					    </div>
+					  </div>
+				</form>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<section class="container top down">
+	<div class="col-lg-7">
+		<h1 class="text-danger">file documents <span style="color: black">DIRECTLY</span> to the courts</h1>
+		<p style="line-height: 25px;">Our goal with iM-filing is to save lawyers the stress and time involved in submitting documents for civil processes manually to the Nigerian courts.</p>
+		<p style="line-height: 25px;">iM-Filing is a product of Team impact, not affilated with any law firm. We are an online Nigerian Certified Third Party Vendor and specialize in automating the filing of court processes.</p>
+
+		<button class="btn btn-danger">request more information</button>
+	</div>
+
+	<div class="col-lg-5 col-sm-12">
+		<div class="col-lg-6 shiftD col-sm-6">
+			<div class="tab text-center shadow" style="width:200px"><i class="glyphicon glyphicon-time"></i><span class="txt">save time</span></div>
+			<div class="tab text-center shadow" style="width:200px"><i class="glyphicon glyphicon-file"></i><span class="txt">file quickly</span></div>
+		</div>
+
+		<div class="col-lg-6 col-sm-6">
+			<div class="tab text-center shadow" style="width:200px"><i class="glyphicon glyphicon-xbt"></i><span class="txt">save on labor</span></div>
+			<div class="tab text-center shadow txt1" style="width:200px"><i class="glyphicon glyphicon-ok-circle"></i><span class="txt ">file efficiently</span></div>
+		</div>
+		
+		
+	</div>
+	
+</section>
+
+<section class="container top down">
+	<div class="col-lg-5 col-sm-12">
+		<div class="tab text-center shadow txt1" style="width:200px"><i class="glyphicon glyphicon-user"></i><span class="txt ">connect with a lawyer</span></div>
+		<div class="tab text-center shadow txt1" style="width:200px"><i class="glyphicon glyphicon-home"></i><span class="txt ">connect with a law firm</span></div>
+		
+	</div>
+
+	<div class="col-lg-7">
+		<h1 class="text-danger">Access a lawyer or law firm around you</h1>
+		<p style="line-height: 25px;">iM-filing also seeks to connect members of the general public to lawyers and law firms around them. We facilitate the easy access of people to reputable and reliable lawyers who can bring an action in the court of law on their behalf</p>
+	
+
+		<button class="btn btn-danger">request more information</button>
+	</div>	
+</section>
+
+<section class="container top down">
+	<div class="col-lg-6">
+		<div class="flex">
+			<i class="glyphicon glyphicon-chevron-right li"></i><p>Our solution is installed on-premise, so your filings go directly from your firm to the court. No middle-man compliance woes</p>
+		</div>
+			
+		<div class="flex">
+			<i class="glyphicon glyphicon-chevron-right li"></i><p>We can reverse engineer your case management system  to integrate it directly with the court and seamlessly file your document an save confirmation numbers, emails and date-stamped documents back to your system</p>
+		</div>
+
+		<div class="flex">
+			<i class="glyphicon glyphicon-chevron-right li"></i><p>Depending on how your firm operates, we can automate extraction of of the electronic sevice list in your documents, stripping of document metadata,verification of document size and more to make sure cases are filed accurately and correctly </p>
+		</div>
+
+		<div class="flex">
+			<i class="glyphicon glyphicon-chevron-right li"></i><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit, expedita ipsum excepturi sit? Adipisci ipsum explicabo saepe aliquam, tempore quisquam nostrum ducimus distinctio, delectus dolorem debitis ex accusamus. Adipisci, qui!</p>
+		</div>	
+	</div>
+	<div class="col-lg-6 img-con">
+		<img src="img/hammer.jpg" class="img-responsive main hub">
+		<img src="img/lawyer.jpg" class="img-responsive sub hub">
+		<img src="img/outside.jpg" class="img-responsive sub1 hub">
+		
+	</div>
+</section>
+
+<section class=" text-center last container">
+	<h1 class="text-danger">save time | save labor | file quickly</h1>
+
+	<p>Let us integrate your firm with the ePortal in a matter of weeks. We customize all software for each firm and have a team of talented programmers ready to jump every hurdle with you to automate your document filing process</p>
+
+	<button class="btn btn-danger">request more information</button>
+
+
+	<hr style="margin-top: 70px">
+</section>
+
+<section class="container text-center bcolor">
+	<h2>our pricing</h2>
+		
+	<p>Recieve access to the same great features whether you're a private party or a law firm that is large or small, All legal professionals,attorneys and law firms receive your <span>first month's filling FREE!</span></p>
+
+	<a href="#">See pricing page for full details and associated costs.</a>
+
+	<div class="col-lg-12 top col-sm-12 side">
+		<div class="card col-lg-4 col-sm-4">
+						<div class="card__side card__side--front">
+							<h3>law firm</h3>
+			<p>Perfect for law firms with multiple attorneys and support staff.</p>
+							<div class="card__details">
+								<ul>
+									<li>unlimited users</li>
+									<li>free electronic service</li>
+									<li>PDF conversion</li>
+									<li>file stamped documents</li>
+									<li>24/7 devoted support</li>
+								</ul>
+							</div>
+						</div>
+						<div class="card__side card__side--back card__side--back-1">
+							<div class="card__cta">
+								<div class="card__price-box">
+									<p class="card__price-value">#500*</p>
+									<p class="card__price-only">per filing</p>
+								</div>
+								<button class="btn btn-danger" type="button" data-toggle="modal" data-target="#myModal">sign up today</button>
+							</div>
+						</div>
+					</div>
+
+		<div class="card col-lg-4 col-sm-4">
+						<div class="card__side card__side--front">
+							<h3>attorney</h3>
+			<p>ideal for solo attorneys and their support staff.</p>
+							<div class="card__details">
+								<ul>
+									<li>unlimited users</li>
+									<li>free electronic service</li>
+									<li>PDF conversion</li>
+									<li>file stamped documents</li>
+									<li>24/7 devoted support</li>
+								</ul>
+
+								
+							</div>
+						</div>
+						<div class="card__side card__side--back card__side--back-2">
+							<div class="card__cta">
+								<div class="card__price-box">
+									<p class="card__price-value">#500*</p>
+									<p class="card__price-only">per filing</p>
+								</div>
+								<button class="btn btn-danger" type="button" data-toggle="modal" data-target="#myModal">sign up today</button>
+							</div>
+						</div>
+					</div>
+
+					<div class="card col-lg-4 col-sm-4">
+						<div class="card__side card__side--front">
+							<h3>individual</h3>
+			<p>Great for self-represented litigants and out of state attorney.</p>
+							<div class="card__details">
+								<ul>
+									<li>1 User Only</li>
+									<li>file stamped documents</li>
+									<li>limited support</li>
+								</ul>
+							</div>
+						</div>
+						<div class="card__side card__side--back card__side--back-3">
+							<div class="card__cta">
+								<div class="card__price-box">
+									<p class="card__price-value">#700*</p>
+									<p class="card__price-only">per filing</p>
+								</div>
+								<button class="btn btn-danger" type="button" data-toggle="modal" data-target="#myModal1">sign up today</button>
+							</div>
+						</div>
+					</div>
+					
+					<div class="space">
+			<P style="font-size: small;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ab eum nemo, id et! Ut, sint doloribus at sit ab eos ratione magnam. Quaerat dolore saepe nostrum <a href="#">asperiores</a> eos eveniet!</P>
+
+			<p style="font-size: small;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint voluptatibus sed id, reiciendis libero, veritatis dolores quis quas. Officiis est hic ipsum error ullam nihil vel, rem similique. Amet, tenetur?</p>
+					</div>
+</section>
+		<hr style="margin-top: 70px; width: 80%">
+<section class="container top">
+	<h2 class="text-center" style="text-transform: capitalize;">Full-features, easy-to-use!</h2>
+
+	<p class="text-center down">Im-filing is feature-rich and very to use, However, if you need help along the way, our support team are here to help.</p>
+
+	<div class="col-lg-4 col-sm-4">
+		<div class="flex flex1">
+			<i class="glyphicon glyphicon-time largeli"></i><span class="box"><h3 style="text-transform: capitalize;">24/7 devoted support</h3><p>Our solution is installed on-premise, so your filings go directly from your firm to the court. No middle-man compliance woes.</p></span>
+		</div>
+
+		<div class="flex flex1">
+			<i class="glyphicon glyphicon-search largeli"></i><span class="box"><h3 style="text-transform: capitalize;">case summary views</h3><p>Instant access to case information, and a historical summary of all eFiling activity from your dashboard.</p></span>
+		</div>
+	</div>
+	<div class="col-lg-4 col-sm-4">
+		<div class="flex flex1">
+			<i class="glyphicon glyphicon-globe largeli"></i><span class="box"><h3 style="text-transform: capitalize;">convert to PDF</h3><p>Let us convert your document to pdf for you! Before filing, just upload them for conversion and we'll produce PDFs.</p></span>
+		</div>
+
+		<div class="flex flex1">
+			<i class="glyphicon glyphicon-bullhorn largeli"></i><span class="box"><h3 style="text-transform: capitalize;">electronic services</h3><p>Add your service contacts and we'll provide you electronic services of process of your document at no additional charge.</p></span>
+		</div>
+	</div>
+
+	<div  class="col-lg-4 col-sm-4">
+		<div class="flex flex1">
+			<i class="glyphicon glyphicon-check largeli"></i><span class="box"><h3 style="text-transform: capitalize;">file stamped documents</h3><p>File stamped documents from the courts will be attached to your accepted nofication email for easy access.</p></span>
+		</div>
+
+		<div class="flex flex1">
+			<i class="glyphicon glyphicon-bell largeli"></i><span class="box"><h3 style="text-transform: capitalize;">detailed reporting</h3><p>Generate detailed activity reports on your filings at any time. View all associated fees and client matter numbers.</p></span>
+		</div>
+	</div>
+</section>
+
+<section class="container container1">
+	<div class="col-lg-8">
+		<h2>frequently asked questions</h2>
+
+		<h3>Are there any other costs associated with eFiling beyond Im-Filing service fees?</h3>
+
+		<p class="feed">Yes, In all eFiling implementation there will be the typical court filing fees mandated by each state's court fee schedule. Other services, such as credit card convenience fees, or other Court or County mandated fees may apply.</p>
+
+		<h3>Are there any other costs associated with eFiling beyond Im-Filing service fees?</h3>
+
+		<p class="feed">Yes, In all eFiling implementation there will be the typical court filing fees mandated by each state's court fee schedule. Other services, such as credit card convenience fees, or other Court or County mandated fees may apply.</p>
+
+		<h3>Are there any other costs associated with eFiling beyond Im-Filing service fees?</h3>
+
+		<p class="feed">Yes, In all eFiling implementation there will be the typical court filing fees mandated by each state's court fee schedule. Other services, such as credit card convenience fees, or other Court or County mandated fees may apply.</p>
+	</div>
+
+	<div class="col-lg-4">
+		<h2>resources</h2>
+
+		<a href="#">efiling Basics</a><br><br>
+		<a href="#">Why was my eFiled paperwork rejected?</a><br><br>
+
+		<h2>from the blog</h2>
+
+		<a href="#">Loading...</a><br><br>
+	</div>
+	
+</section>
+
+<!-- <div class="container">
+	<section id="aboutUs" class="container col-lg-4">
+	  <div class="page-header">
+	  	  <h2>About us</h2>	
+	  </div>
+	  <p>iM-Filing is a Nigerian online platform developed and designed to reduce and eliminate the hassles and problems of filing court processes in Nigeria. It was founded by a team of six dedicated and dynamic software developers who saw the hiccups and distraught of lawyers and proffered a lasting solution in the judicary systems.</p>
+	</section>
+
+	<section class="col-lg-4 ">.</section>
+
+	<section id="contactUs" class="container col-lg-4">
+		<div class="page-header" id="contactUs">
+                <h2>Contact Us
+                </h2>
+            </div>--><!-- End Page Header -->
+
+           <!-- <div class="row">
+                <div class="col-lg-6">
+                    <p>Send us a message, or contact us via the address below:</p>
+
+
+                    <address>
+                        <strong>Team Impact.</strong><br>
+                        117 Apapa rd Off costain, <br>Ebute Metta, Lagos. <br>
+                        Nigeria P.O.B- 110017<br>
+                        Tel: +234 701 757 8648
+                    </address>
+                </div>
+	</section>
+</div> -->
+
+	<footer class="text-center container-fluid top">
+
+		<div class="flex top down">
+			<h1>im-Filing</h1>
+
+			<div class="flexgrid">
+				<h4>follow us</h4>
+				
+				<div class="flex2">
+
+					<div class="flexgrid">
+						<a href="#">Twitter</a>
+						<a href="#">Facebook</a>
+					</div>
+					
+
+					<div class="flexgrid">
+						<a href="#">Linkedin</a>
+						<a href="#">Instagram</a>
+					</div>
+					
+				</div>
+				
+			</div>
+
+			<div>
+				<h4>Court filling by state</h4>
+
+				<div class="flex1">
+					<a href="#">Lagos e-filing</a>
+					<a href="#">Port Harcourt e-filing</a>
+					<a href="#">Abuja e-filing</a>
+				</div>
+				
+			</div>
+		</div>
+
+		<h3 class="top">&copy; 2019 TI Developers, All Right Reserved</h3>
+	</footer>
+	
+	<script type="text/javascript" src="jquery/jquery-3.3.1.min.js"></script>
+	<script type="text/javascript" src="js/Bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
